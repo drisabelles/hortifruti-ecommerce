@@ -27,10 +27,10 @@ Aplicação desenvolvida com a intenção de praticar e aprimorar os conheciment
 
 ## 🪢 Usabilidades <a name="usabilities"></a>
 - [X] Tela de cadastro
-- [X] Tela de login
+- [ ] Tela de login
 - [X] Tela de perfil
-- [X] Tela de visualização e seleção de produtos
-- [X] Tela do carrinho de compras
+- [ ] Tela de visualização e seleção de produtos
+- [ ] Tela do carrinho de compras
 
 
 <br />
