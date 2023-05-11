@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
 class Profile extends StatelessWidget {
-  String nome, email, endereco, numero, complemento, uf, cep;
+  final String nome, email, endereco, numero, complemento, uf, cep;
 
   Profile(
-      {required this.nome,
+    { 
+      required this.nome,
       required this.email,
       required this.endereco,
       required this.numero,
       required this.complemento,
       required this.uf,
-      required this.cep}
-    );
+      required this.cep
+    }
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +37,25 @@ class Profile extends StatelessWidget {
               Text('UF: ${uf}'),
               const SizedBox(height: 15,),
               Text('CEP: ${cep}'),
-              const SizedBox(height: 15,),
+              const SizedBox(height: 30,),
+              SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/home');                        
+                  },
+                  child: const Text(
+                    'Ir para página inicial', 
+                    style: TextStyle(
+                      fontSize: 15, fontWeight: FontWeight.w500
+                    )
+                  ),
+                ),
+              ),
             ],
           ),
+          
         )
       );
   }

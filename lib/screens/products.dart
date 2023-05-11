@@ -78,7 +78,7 @@ class _ProductsState extends State<Products> {
                   )
                 ),
                 if (itens.lista.contains(table[product])) 
-                  Icon(Icons.shopping_cart, color: Colors.deepOrange, size: 8)
+                  Icon(Icons.shopping_cart, color: Colors.deepOrange, size: 10)
               ],
             ),
             trailing: Text(

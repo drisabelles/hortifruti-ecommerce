@@ -6,6 +6,7 @@ import 'package:flutter_app/screens/products.dart';
 import 'package:flutter_app/screens/purchase_confirmation.dart';
 import 'package:flutter_app/screens/register.dart';
 import 'package:flutter_app/screens/survey.dart';
+import 'package:flutter_app/screens/home.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -23,13 +24,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'HortiFruti E-commerce',
       theme: ThemeData(primarySwatch: Colors.green),
-      home: Survey(),
+      home: Login(),
       routes: {
         '/products': (context) => Products(),
         '/cart': (context) => Cart(),
         '/purchase_confirmation': (context) => PurchaseConfirmation(),
-        '/home': (context) => Login(),
-        '/register': (context) => Register()
+        '/home': (context) => Home(),
+        '/register': (context) => Register(),
+        '/survey': (context) => Survey(),
       }
     );
   }
