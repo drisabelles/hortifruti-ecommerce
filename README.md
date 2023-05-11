@@ -1,6 +1,8 @@
 <div align="center">
 
-# 🍓🛒🥕 Hortifruti E-commerce 🍓🛒🥕
+<img src="https://github.com/drisabelles/hortifruti-ecommerce/assets/79321198/0ee1a6aa-350e-45b1-8a56-0fbd033bc49a" width="300" height="300"> 
+  
+  # 🍓🛒🥕 Hortifruti E-commerce 🍓🛒🥕
 
 </div>
 
