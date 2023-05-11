@@ -37,11 +37,27 @@ Aplicação desenvolvida com a intenção de praticar e aprimorar os conheciment
 
 ## 🖼️ Screenshots <a name="screenshots"></a>
 
-<!--- <div align="center"> --->
+<div align="center">
 
-Em breve.
+  ### Tela de login
+  [login.webm](https://github.com/drisabelles/hortifruti-ecommerce/assets/79321198/cd2014a2-5e04-4e6c-a884-8b299a9d1404)
+  
+  </br>
 
-<!--- </div> --->
+  ### Tela de cadastro e perfil
+  [register_form.webm](https://github.com/drisabelles/hortifruti-ecommerce/assets/79321198/e3329083-f9a1-47e3-a8ce-6179d2d69752)
+  
+  </br>
+  
+  ### Lista de produtos
+  [products_listview.webm](https://github.com/drisabelles/hortifruti-ecommerce/assets/79321198/86b46d26-3828-4014-abad-1bb8444f0c77)
+  
+  </br>
+
+  ### Pesquisa com o usuário
+  [survey_checkbox.webm](https://github.com/drisabelles/hortifruti-ecommerce/assets/79321198/f6510211-51f8-40ee-827d-98fcdb225b08)
+
+</div>
 
 </br>
 
@@ -56,7 +72,7 @@ $ git clone https://github.com/drisabelles/flutter-shopping-cart.git
 $ cd flutter-shopping-cart
 
 # Instale as dependências
-$ dart pub get
+$ flutter pub get
 
 # Inicie o projeto
 $ flutter run
@@ -75,20 +91,17 @@ Para não ter que executar os códigos e ver o que foi desenvolvido, <a href="ht
 
 ```bash
 📂 flutter-shopping-cart
-|- 📁 android
+|- 📁 .dart/tool
+|- 📁 assets/images
+|- 📁 build/web
 |- 📁 lib
 |--- 📁 components
-|----- 📄 customTextField.dart
+|--- 📁 models
+|--- 📁 repositories
 |--- 📁 screens
-|----- 📄 register.dart
-|----- 📄 profile.dart
 |--- 📄 main.dart
 |- 📁 test
 |- 📁 web
-|- 📁 windnows
-|- 📄 .gitignore
-|- 📄 .metadata
-|- 📄 analysis_options.yaml
 |- 📄 pubspec.lock
 |- 📄 pubspec.yaml
 ```
