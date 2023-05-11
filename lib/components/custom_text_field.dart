@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
   final String label;
-  final IconData? prefix_icon;
-  final IconData? suffix_icon;
+  final bool obscureText;
+  final IconData? icon;
+  final Widget? suffix;
   final String? Function(String? text)? validator;
   final void Function(String? text)? onSaved;
 
   const CustomTextField(
       {Key? key,
       required this.label,
-      required this.prefix_icon,
-      required this.suffix_icon,
+      required this.obscureText,
+      required this.icon,
+      this.suffix,
       required this.validator,
       required this.onSaved})
       : super(key: key);
@@ -21,14 +23,15 @@ class CustomTextField extends StatelessWidget {
     return TextFormField(
       validator: validator,
       onSaved: onSaved,
+      obscureText: obscureText,
       decoration: InputDecoration(
         labelText: label,
         hintText: 'Digite o $label',
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5),
         ),
-        prefixIcon: prefix_icon == null ? null : Icon(prefix_icon),
-        suffixIcon: suffix_icon == null ? null : Icon(suffix_icon)
+        prefixIcon: icon == null ? null : Icon(icon),
+        suffixIcon: suffix
       ),
     );
   }

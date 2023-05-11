@@ -10,6 +10,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   final formKey = GlobalKey<FormState>();
+  bool obscuredText = false;
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +32,9 @@ class _LoginState extends State<Login> {
                   const SizedBox(height: 30),
                   CustomTextField(
                     label: 'Nome de usuário',
-                    prefix_icon: Icons.person_outline,
-                    suffix_icon: null,
+                    obscureText: false,
+                    icon: Icons.person_outline,
+                    suffix: null,
                     validator: (text) => text == null || text.isEmpty
                       ? 'Esse campo deve ser preenchido'
                       : null,
@@ -41,18 +43,27 @@ class _LoginState extends State<Login> {
                   const SizedBox(height: 15),
                   CustomTextField(
                     label: 'Senha',
-                    prefix_icon: Icons.vpn_key,
-                    suffix_icon: Icons.visibility_off,
+                    obscureText: obscuredText = !obscuredText,
+                    icon: Icons.vpn_key,
                     validator: (text) {
                       if (text == null || text.isEmpty) {
-                        return 'Esse campo deve ser preenchido';
+                       return 'Esse campo deve ser preenchido';
                       }
-
-                      if (!validator.isEmail(text)) {
-                        return 'Formato inválido para e-mail';
+                      if (text.length < 8) {
+                        return 'Senha com número de caracteres insuficiente';
                       }
                     },
-                    onSaved: null
+                    onSaved: null,
+                    suffix: IconButton(
+                      onPressed: (){
+                        setState(() {
+                          obscuredText = obscuredText;
+                        });
+                      }, 
+                      icon: Icon(
+                        obscuredText ? Icons.visibility_off : Icons.visibility
+                      ),
+                    )
                   ),
                   const SizedBox(height: 30),
                   SizedBox(

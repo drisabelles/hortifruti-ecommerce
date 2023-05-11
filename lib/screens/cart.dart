@@ -1,4 +1,4 @@
-import 'package:flutter_app/models/product.dart';
+import 'package:flutter_app/models/product_model.dart';
 import 'package:flutter_app/repositories/cart_repository.dart';
 import 'package:flutter_app/components/product_card.dart';
 import 'package:flutter/material.dart';

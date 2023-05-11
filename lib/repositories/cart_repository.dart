@@ -1,6 +1,6 @@
 import 'dart:collection';
 
-import 'package:flutter_app/models/product.dart';
+import 'package:flutter_app/models/product_model.dart';
 import 'package:flutter/material.dart';
 
 class CartRepository extends ChangeNotifier {

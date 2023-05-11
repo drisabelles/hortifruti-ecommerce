@@ -11,6 +11,7 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   var user = UserModel();
   final formKey = GlobalKey<FormState>();
+  bool obscuredText = false;
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +27,8 @@ class _RegisterState extends State<Register> {
                 child: Column(children: [
                   CustomTextField(
                     label: 'Nome',
-                    prefix_icon: Icons.person,
-                    suffix_icon: null,
+                    obscureText: obscuredText,
+                    icon: Icons.person,
                     validator: (text) => text == null || text.isEmpty
                         ? 'Esse campo deve ser preenchido'
                         : null,
@@ -36,8 +37,8 @@ class _RegisterState extends State<Register> {
                   const SizedBox(height: 15),
                   CustomTextField(
                     label: 'Nome de usuário',
-                    prefix_icon: Icons.person_outlined,
-                    suffix_icon: null,
+                    obscureText: obscuredText,
+                    icon: Icons.person_outlined,
                     validator: (text) => text == null || text.isEmpty
                         ? 'Esse campo deve ser preenchido'
                         : null,
@@ -46,18 +47,34 @@ class _RegisterState extends State<Register> {
                   const SizedBox(height: 15),
                   CustomTextField(
                     label: 'Senha',
-                    prefix_icon: Icons.vpn_key,
-                    suffix_icon: null,
-                    validator: (text) => text == null || text.isEmpty
-                        ? 'Esse campo deve ser preenchido'
-                        : null,
+                    obscureText: obscuredText = !obscuredText,
+                    icon: Icons.vpn_key,
+                    validator: (text) {
+                      if (text == null || text.isEmpty) {
+                       return 'Esse campo deve ser preenchido';
+                      }
+                      if (text.length < 8) {
+                        return 'A senha deve conter pelo menos 8 caracteres';
+                      }
+                    },
                     onSaved: (text) => user = user.copyWith(nome_usuario: text),
+                    suffix: IconButton(
+                      onPressed: (){
+                        setState(() {
+                          obscuredText = obscuredText;
+                        });
+                      }, 
+                      icon: Icon(
+                        obscuredText ? Icons.visibility_off : Icons.visibility
+                      ),
+                    )
                   ),
                   const SizedBox(height: 15),
                   CustomTextField(
                     label: 'E-mail',
-                    prefix_icon: Icons.mail,
-                    suffix_icon: null,
+                    obscureText: obscuredText,
+                    icon: Icons.mail,
+                    suffix: null,
                     validator: (text) {
                       if (text == null || text.isEmpty) {
                         return 'Esse campo deve ser preenchido';
@@ -72,8 +89,9 @@ class _RegisterState extends State<Register> {
                   const SizedBox(height: 15),
                   CustomTextField(
                     label: 'Endereço', 
-                    prefix_icon: Icons.place,
-                    suffix_icon: null,
+                    obscureText: obscuredText,
+                    icon: Icons.place,
+                    suffix: null,
                     validator: (text) => text == null || text.isEmpty
                         ? 'Esse campo deve ser preenchido'
                         : null,
@@ -82,8 +100,9 @@ class _RegisterState extends State<Register> {
                   const SizedBox(height: 15),
                   CustomTextField(
                     label: 'Número',
-                    prefix_icon: Icons.numbers,
-                    suffix_icon: null,
+                    obscureText: obscuredText,
+                    icon: Icons.numbers,
+                    suffix: null,
                     validator: (text) => text == null || text.isEmpty
                         ? 'Esse campo deve ser preenchido'
                         : null,
@@ -92,8 +111,9 @@ class _RegisterState extends State<Register> {
                   const SizedBox(height: 15),
                   CustomTextField(
                     label: 'Complemento',
-                    prefix_icon: Icons.location_city,
-                    suffix_icon: null,
+                    obscureText: obscuredText,
+                    icon: Icons.location_city,
+                    suffix: null,
                     validator: (text) => text == null || text.isEmpty
                         ? 'Esse campo deve ser preenchido'
                         : null,
@@ -102,8 +122,9 @@ class _RegisterState extends State<Register> {
                   const SizedBox(height: 15),
                   CustomTextField(
                     label: 'UF',
-                    prefix_icon: Icons.map,
-                    suffix_icon: null,
+                    obscureText: obscuredText,
+                    icon: Icons.map,
+                    suffix: null,
                     validator: (text) => text == null || text.isEmpty
                         ? 'Esse campo deve ser preenchido'
                         : null,
@@ -112,8 +133,9 @@ class _RegisterState extends State<Register> {
                   const SizedBox(height: 15),
                   CustomTextField(
                     label: 'CEP',
-                    prefix_icon: Icons.numbers,
-                    suffix_icon: null,
+                    obscureText: obscuredText,
+                    icon: Icons.numbers,
+                    suffix: null,
                     validator: (text) => text == null || text.isEmpty
                         ? 'Esse campo deve ser preenchido'
                         : null,

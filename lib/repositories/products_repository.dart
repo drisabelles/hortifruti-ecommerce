@@ -1,4 +1,4 @@
-import 'package:flutter_app/models/product.dart';
+import 'package:flutter_app/models/product_model.dart';
 
 class ProductsRepository {
   static List<Product> table = [

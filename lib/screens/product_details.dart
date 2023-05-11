@@ -1,4 +1,4 @@
-import 'package:flutter_app/models/product.dart';
+import 'package:flutter_app/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
@@ -18,9 +18,9 @@ class _ProductDetailsState extends State<ProductDetails> {
   final _valor = TextEditingController();
   double quantidade = 0;
 
-  comprar() {
+    comprar() {
     if (_form.currentState!.validate()) {
-      Navigator.of(context).pushNamed('/purchase_confirmation');
+       Navigator.of(context).pushNamed('/purchase_confirmation');
     }
   }
 

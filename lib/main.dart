@@ -5,6 +5,7 @@ import 'package:flutter_app/screens/login.dart';
 import 'package:flutter_app/screens/products.dart';
 import 'package:flutter_app/screens/purchase_confirmation.dart';
 import 'package:flutter_app/screens/register.dart';
+import 'package:flutter_app/screens/survey.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -20,9 +21,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Aplicativo da Isabelle',
+      title: 'HortiFruti E-commerce',
       theme: ThemeData(primarySwatch: Colors.green),
-      home: Login(),
+      home: Survey(),
       routes: {
         '/products': (context) => Products(),
         '/cart': (context) => Cart(),
