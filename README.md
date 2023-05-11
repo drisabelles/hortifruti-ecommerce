@@ -31,7 +31,7 @@ Aplicação desenvolvida com a intenção de praticar e aprimorar os conheciment
 - [X] Tela de perfil
 - [X] Tela de visualização e seleção de produtos (Float Action Button)
 - [X] Tela do carrinho de compras (ListView)
-- [ ] Tela de avaliação do usuário (CheckBox)
+- [X] Tela de avaliação do usuário (CheckBox)
 
 <br />
 
