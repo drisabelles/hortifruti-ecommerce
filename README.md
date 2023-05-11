@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛒 Carrinho de Compras 🛒
+# 🍓🛒🥕 Hortifruti E-commerce 🍓🛒🥕
 
 </div>
 
