@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'HortiFruti E-commerce',
       theme: ThemeData(primarySwatch: Colors.green),
-      home: Survey(),
+      home: Login(),
       routes: {
         '/products': (context) => Products(),
         '/cart': (context) => Cart(),
