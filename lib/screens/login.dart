@@ -16,7 +16,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Cadastro'),
+          title: const Text('Login'),
         ),
         body: SingleChildScrollView(
           child: Form(
@@ -61,7 +61,7 @@ class _LoginState extends State<Login> {
                         });
                       }, 
                       icon: Icon(
-                        obscuredText ? Icons.visibility_off : Icons.visibility
+                        obscuredText ? Icons.visibility : Icons.visibility_off
                       ),
                     )
                   ),

@@ -27,7 +27,7 @@ class _RegisterState extends State<Register> {
                 child: Column(children: [
                   CustomTextField(
                     label: 'Nome',
-                    obscureText: obscuredText,
+                    obscureText: false,
                     icon: Icons.person,
                     validator: (text) => text == null || text.isEmpty
                         ? 'Esse campo deve ser preenchido'
@@ -37,7 +37,7 @@ class _RegisterState extends State<Register> {
                   const SizedBox(height: 15),
                   CustomTextField(
                     label: 'Nome de usuário',
-                    obscureText: obscuredText,
+                    obscureText: false,
                     icon: Icons.person_outlined,
                     validator: (text) => text == null || text.isEmpty
                         ? 'Esse campo deve ser preenchido'
@@ -47,7 +47,7 @@ class _RegisterState extends State<Register> {
                   const SizedBox(height: 15),
                   CustomTextField(
                     label: 'Senha',
-                    obscureText: obscuredText = !obscuredText,
+                    obscureText: !obscuredText,
                     icon: Icons.vpn_key,
                     validator: (text) {
                       if (text == null || text.isEmpty) {
@@ -57,11 +57,11 @@ class _RegisterState extends State<Register> {
                         return 'A senha deve conter pelo menos 8 caracteres';
                       }
                     },
-                    onSaved: (text) => user = user.copyWith(nome_usuario: text),
+                    onSaved: (text) => user = user.copyWith(senha: text),
                     suffix: IconButton(
                       onPressed: (){
                         setState(() {
-                          obscuredText = obscuredText;
+                          obscuredText = !obscuredText;
                         });
                       }, 
                       icon: Icon(
@@ -72,7 +72,7 @@ class _RegisterState extends State<Register> {
                   const SizedBox(height: 15),
                   CustomTextField(
                     label: 'E-mail',
-                    obscureText: obscuredText,
+                    obscureText: false,
                     icon: Icons.mail,
                     suffix: null,
                     validator: (text) {
@@ -89,7 +89,7 @@ class _RegisterState extends State<Register> {
                   const SizedBox(height: 15),
                   CustomTextField(
                     label: 'Endereço', 
-                    obscureText: obscuredText,
+                    obscureText: false,
                     icon: Icons.place,
                     suffix: null,
                     validator: (text) => text == null || text.isEmpty
@@ -100,7 +100,7 @@ class _RegisterState extends State<Register> {
                   const SizedBox(height: 15),
                   CustomTextField(
                     label: 'Número',
-                    obscureText: obscuredText,
+                    obscureText: false,
                     icon: Icons.numbers,
                     suffix: null,
                     validator: (text) => text == null || text.isEmpty
@@ -111,7 +111,7 @@ class _RegisterState extends State<Register> {
                   const SizedBox(height: 15),
                   CustomTextField(
                     label: 'Complemento',
-                    obscureText: obscuredText,
+                    obscureText: false,
                     icon: Icons.location_city,
                     suffix: null,
                     validator: (text) => text == null || text.isEmpty
@@ -122,7 +122,7 @@ class _RegisterState extends State<Register> {
                   const SizedBox(height: 15),
                   CustomTextField(
                     label: 'UF',
-                    obscureText: obscuredText,
+                    obscureText: false,
                     icon: Icons.map,
                     suffix: null,
                     validator: (text) => text == null || text.isEmpty
@@ -133,7 +133,7 @@ class _RegisterState extends State<Register> {
                   const SizedBox(height: 15),
                   CustomTextField(
                     label: 'CEP',
-                    obscureText: obscuredText,
+                    obscureText: false,
                     icon: Icons.numbers,
                     suffix: null,
                     validator: (text) => text == null || text.isEmpty
@@ -151,7 +151,7 @@ class _RegisterState extends State<Register> {
                           formKey.currentState!.save();
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder:(context) => Profile(nome: user.nome, email: user.email, endereco: user.endereco, numero: user.numero, complemento: user.complemento, uf: user.uf, cep: user.cep)));
+                              builder:(context) => Profile(nome: user.nome, nome_usuario: user.nome_usuario, email: user.email, endereco: user.endereco, numero: user.numero, complemento: user.complemento, uf: user.uf, cep: user.cep)));
                         }
                       },
                       child: const Text(
@@ -196,6 +196,8 @@ class _RegisterState extends State<Register> {
 @immutable
 class UserModel {
   final String nome;
+  final String nome_usuario;
+  final String senha;
   final String email;
   final String endereco;
   final String numero;
@@ -205,6 +207,8 @@ class UserModel {
 
   UserModel({
     this.nome = '',
+    this.nome_usuario = '',
+    this.senha = '',
     this.email = '',
     this.endereco = '',
     this.numero = '',
@@ -216,6 +220,7 @@ class UserModel {
   UserModel copyWith({
     String? nome,
     String? nome_usuario,
+    String? senha,
     String? email,
     String? endereco,
     String? numero,
@@ -225,6 +230,8 @@ class UserModel {
   }) {
     return UserModel(
       nome: nome ?? this.nome,
+      nome_usuario: nome_usuario ?? this.nome_usuario,
+      senha: senha ?? this.senha,
       email: email ?? this.email,
       endereco: endereco ?? this.endereco,
       numero: numero ?? this.numero,
