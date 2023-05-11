@@ -26,12 +26,12 @@ Aplicação desenvolvida com a intenção de praticar e aprimorar os conheciment
 </br>
 
 ## 🪢 Usabilidades <a name="usabilities"></a>
-- [X] Tela de cadastro
+- [X] Tela de cadastro (Form)
 - [X] Tela de login
 - [X] Tela de perfil
-- [X] Tela de visualização e seleção de produtos
-- [X] Tela do carrinho de compras
-- [ ] Tela de avaliação do usuário
+- [X] Tela de visualização e seleção de produtos (Float Action Button)
+- [X] Tela do carrinho de compras (ListView)
+- [ ] Tela de avaliação do usuário (CheckBox)
 
 <br />
 
