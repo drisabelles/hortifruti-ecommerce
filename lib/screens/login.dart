@@ -32,6 +32,7 @@ class _LoginState extends State<Login> {
                   const SizedBox(height: 30),
                   CustomTextField(
                     label: 'Nome de usuário',
+                    hint: 'Digite o seu nome de usuário',
                     obscureText: false,
                     icon: Icons.person_outline,
                     suffix: null,
@@ -43,6 +44,7 @@ class _LoginState extends State<Login> {
                   const SizedBox(height: 15),
                   CustomTextField(
                     label: 'Senha',
+                    hint: 'Digite a sua senha',
                     obscureText: obscuredText = !obscuredText,
                     icon: Icons.vpn_key,
                     validator: (text) {
@@ -67,7 +69,7 @@ class _LoginState extends State<Login> {
                   ),
                   const SizedBox(height: 30),
                   SizedBox(
-                    width: double.infinity,
+                    width: 300,
                     height: 50,
                     child: ElevatedButton(
                       onPressed: () {
@@ -84,28 +86,21 @@ class _LoginState extends State<Login> {
                   ),
                   const SizedBox(height: 15),
                   SizedBox(
-                    width: double.infinity,
+                    width: 300,
                     height: 50,
-                    child: OutlinedButton(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(backgroundColor: Colors.deepOrange),
                       onPressed: () {
                         Navigator.of(context).pushNamed('/register');
                       },
-                      child: Text(
-                        'Não tem uma conta? Cadastre-se', 
+                      child: const Text(
+                        'Não tem uma conta? Cadastre-se',
                         style: TextStyle(
-                          fontSize: 15, fontWeight: FontWeight.w500
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500
                         )
                       ),
-                      style: OutlinedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        side: BorderSide(
-                          color: Colors.deepOrange,
-                          width: 2
-                        )
-                      ),
-                    )
+                    ),
                   ),
                 ])),
           ),

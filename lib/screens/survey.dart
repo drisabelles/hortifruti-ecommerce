@@ -112,7 +112,7 @@ class _SurveyState extends State<Survey> {
             ),
             const SizedBox(height: 30),
             SizedBox(
-              width: double.infinity,
+              width: 300,
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
@@ -154,29 +154,22 @@ class _SurveyState extends State<Survey> {
             ),
             const SizedBox(height: 15),
             SizedBox(
-              width: double.infinity,
-              height: 50,
-              child: OutlinedButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/home');
-                },
-                child: Text(
-                  'Voltar', 
-                  style: TextStyle(
-                    fontSize: 15, fontWeight: FontWeight.w500
-                  )
-                ),
-                style: OutlinedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
+                    width: 300,
+                    height: 50,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(backgroundColor: Colors.deepOrange),
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/home');
+                      },
+                      child: const Text(
+                        'Voltar para página inicial',
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500
+                        )
+                      ),
+                    ),
                   ),
-                  side: BorderSide(
-                    color: Colors.deepOrange,
-                    width: 2
-                  )
-                ),
-              )
-            ),
           ],
         ),
       ),

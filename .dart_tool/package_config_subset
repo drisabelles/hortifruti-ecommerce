@@ -46,6 +46,10 @@ lints
 2.17
 file:///zapp/pub/.pub_cache/hosted/pub.dev/lints-2.0.1/
 file:///zapp/pub/.pub_cache/hosted/pub.dev/lints-2.0.1/lib/
+mask_text_input_formatter
+2.12
+file:///zapp/pub/.pub_cache/hosted/pub.dev/mask_text_input_formatter-2.4.0/
+file:///zapp/pub/.pub_cache/hosted/pub.dev/mask_text_input_formatter-2.4.0/lib/
 matcher
 2.18
 file:///zapp/pub/.pub_cache/hosted/pub.dev/matcher-0.12.13/

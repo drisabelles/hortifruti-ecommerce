@@ -80,6 +80,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "mask_text_input_formatter",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/mask_text_input_formatter-2.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "matcher",
       "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/matcher-0.12.13",
       "packageUri": "lib/",
@@ -176,7 +182,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-05-09T00:28:45.236185Z",
+  "generated": "2023-05-14T00:48:40.015572Z",
   "generator": "pub",
   "generatorVersion": "2.19.2"
 }

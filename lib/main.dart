@@ -13,7 +13,7 @@ void main() {
   runApp(
     ChangeNotifierProvider(
       create: (context) => CartRepository(),
-      child: MyApp()
+      child: MyApp(),
     )
   );
 }
@@ -22,14 +22,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'HortiFruti E-commerce',
       theme: ThemeData(primarySwatch: Colors.green),
       home: Login(),
       routes: {
-        '/products': (context) => Products(),
         '/cart': (context) => Cart(),
-        '/purchase_confirmation': (context) => PurchaseConfirmation(),
         '/home': (context) => Home(),
+        '/login': (context) => Login(),
+        '/products': (context) => Products(),
+        '/purchase_confirmation': (context) => PurchaseConfirmation(),
         '/register': (context) => Register(),
         '/survey': (context) => Survey(),
       }
