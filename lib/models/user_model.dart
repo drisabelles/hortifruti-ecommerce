@@ -12,6 +12,7 @@ class UserModel {
   final String password;
   //residential data
   final String address;
+  final String neighborhood;
   final String number;
   final String address_complement;
   final String uf;
@@ -28,6 +29,7 @@ class UserModel {
     this.password = '',
     //residential data
     this.address = '',
+    this.neighborhood = '',
     this.number = '',
     this.address_complement = '',
     this.uf = '',
@@ -45,6 +47,7 @@ class UserModel {
     String? password,
     //residential data
     String? address,
+    String? neighborhood,
     String? number,
     String? address_complement,
     String? uf,
@@ -63,6 +66,7 @@ class UserModel {
       password: password ?? this.password,
       //residential data
       address: address ?? this.address,
+      neighborhood: neighborhood ?? this.neighborhood,
       number: number ?? this.number,
       address_complement: address_complement ?? this.address_complement,
       uf: uf ?? this.uf,

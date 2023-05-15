@@ -75,6 +75,7 @@ flutter:
     - assets/images/products/pimenta.png
     - assets/images/products/kiwi.png
     - assets/images/products/melancia.png
+    - assets/images/profile/joaninha.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

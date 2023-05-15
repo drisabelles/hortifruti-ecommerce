@@ -191,8 +191,8 @@ class _RegisterState extends State<Register> {
                   CustomTextField(
                     keyboardType: TextInputType.text,
                     obscureText: false,
-                    label: 'Endereço',
-                    hint: 'Ex.: Rua Fulano de Tal, Bairro Ciclano',
+                    label: 'Logradouro',
+                    hint: 'Ex.: Rua Fulano de Tal',
                     icon: Icons.place,
                     validator: (text) {
                       if (text == null || text.isEmpty) {
@@ -218,6 +218,20 @@ class _RegisterState extends State<Register> {
                       }
                     },
                     onSaved: (text) => user = user.copyWith(number: text),
+                  ),
+                  const SizedBox(height: 15),
+                  CustomTextField(
+                    keyboardType: TextInputType.text,
+                    obscureText: false,
+                    label: 'Bairro',
+                    hint: 'Ex.: Jardim do Céu',
+                    icon: Icons.place,
+                    validator: (text) {
+                      if (text == null || text.isEmpty) {
+                        return 'Esse campo deve ser preenchido';
+                      }
+                    },
+                    onSaved: (text) => user = user.copyWith(neighborhood: text),
                   ),
                   const SizedBox(height: 15),
                   CustomTextField(
@@ -288,7 +302,8 @@ class _RegisterState extends State<Register> {
                                 phone: user.phone,
                                 username: user.username,
                                 password: user.password,
-                                address: user.address, 
+                                address: user.address,
+                                neighborhood: user.neighborhood, 
                                 number: user.number, 
                                 address_complement: user.address_complement, 
                                 uf: user.uf, 
