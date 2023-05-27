@@ -85,7 +85,7 @@ $ flutter run
 
 ## 🌐 Link <a name="link"></a>
 
-Para não ter que executar os códigos e ver o que foi desenvolvido, <a href="https://zm3806utm390.zapp.page/#/">você pode clicar aqui para acessar a aplicação</a>.
+Para não ter que executar os códigos e ver o que foi desenvolvido, <a href="https://zo7k06gko7l0.zapp.page/#/">você pode clicar aqui para acessar a aplicação</a>.
 
 </br>
 
