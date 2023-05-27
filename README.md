@@ -68,10 +68,10 @@ Aplicação desenvolvida com a intenção de praticar e aprimorar os conheciment
 ```bash
 
 # Baixe este repositório ou clone pelo Git usando o comando:
-$ git clone https://github.com/drisabelles/flutter-shopping-cart.git
+$ git clone https://github.com/drisabelles/hortifruti-ecommerce.git
 
 # Acesse a pasta do projeto
-$ cd flutter-shopping-cart
+$ cd hortifruti-ecommerce
 
 # Instale as dependências
 $ flutter pub get
@@ -85,7 +85,7 @@ $ flutter run
 
 ## 🌐 Link <a name="link"></a>
 
-Para não ter que executar os códigos e ver o que foi desenvolvido, <a href="https://zm3806utm390.zapp.page/#/">você pode clicar aqui para acessar a aplicação</a>.
+Para não ter que executar os códigos e ver o que foi desenvolvido, <a href="https://zo7k06gko7l0.zapp.page/#/">você pode clicar aqui para acessar a aplicação</a>.
 
 </br>
 
