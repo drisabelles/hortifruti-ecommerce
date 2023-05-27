@@ -32,6 +32,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "crypto",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/crypto-3.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "cupertino_icons",
       "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/cupertino_icons-1.0.5",
       "packageUri": "lib/",
@@ -40,6 +46,18 @@
     {
       "name": "fake_async",
       "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/fake_async-1.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "ffi",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/ffi-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "file",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/file-6.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -60,6 +78,30 @@
       "rootUri": "file:///zapp/sdk/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "2.17"
+    },
+    {
+      "name": "hive",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/hive-2.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "hive_flutter",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/hive_flutter-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/http-0.13.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/http_parser-4.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "intl",
@@ -116,6 +158,60 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "path_provider",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/path_provider-2.0.15",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "path_provider_android",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/path_provider_android-2.0.27",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "path_provider_foundation",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/path_provider_foundation-2.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "path_provider_linux",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/path_provider_linux-2.1.11",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "path_provider_platform_interface",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/path_provider_platform_interface-2.0.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "path_provider_windows",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/path_provider_windows-2.1.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "platform",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/platform-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "plugin_platform_interface",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/plugin_platform_interface-2.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "process",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/process-4.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
       "name": "provider",
       "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/provider-5.0.0",
       "packageUri": "lib/",
@@ -170,10 +266,28 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "typed_data",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/typed_data-1.3.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/vector_math-2.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.14"
+    },
+    {
+      "name": "win32",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/win32-4.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "xdg_directories",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/xdg_directories-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
     },
     {
       "name": "flutter_app",
@@ -182,7 +296,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-05-14T00:48:40.015572Z",
+  "generated": "2023-05-27T19:34:46.536975Z",
   "generator": "pub",
   "generatorVersion": "2.19.2"
 }

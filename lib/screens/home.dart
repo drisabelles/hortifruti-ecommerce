@@ -62,6 +62,23 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 15),
+                SizedBox(
+                  width: double.infinity,
+                  height: 50,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/clients'); 
+                    },
+                    child: const Text(
+                      'Visualizar clientes', 
+                      style: TextStyle(
+                        fontSize: 15, 
+                        fontWeight: FontWeight.w500
+                      )
+                    ),
+                  ),
+                ),
               ]
             )
           ),

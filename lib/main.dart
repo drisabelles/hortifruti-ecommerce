@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/repositories/cart_repository.dart';
 import 'package:flutter_app/screens/cart.dart';
+import 'package:flutter_app/screens/clients.dart';
 import 'package:flutter_app/screens/login.dart';
 import 'package:flutter_app/screens/products.dart';
 import 'package:flutter_app/screens/purchase_confirmation.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         '/purchase_confirmation': (context) => PurchaseConfirmation(),
         '/register': (context) => Register(),
         '/survey': (context) => Survey(),
+        '/clients': (context) => Clients(),
       }
     );
   }

@@ -1,10 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_app/models/product_model.dart';
 import 'package:flutter_app/repositories/cart_repository.dart';
-import 'package:flutter_app/repositories/products_repository.dart';
 import 'package:flutter_app/screens/product_details.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+import 'package:http/http.dart' as http;
 
 class Products extends StatefulWidget {
   const Products({Key? key}) : super(key: key);
@@ -14,10 +16,17 @@ class Products extends StatefulWidget {
 }
 
 class _ProductsState extends State<Products> {
-  final table = ProductsRepository.table;
   NumberFormat real = NumberFormat.currency(locale: 'pt-BR', name: 'R\$');
   List<Product> choosed = [];
   late CartRepository itens;
+
+  late Future<List<Product>> products;
+
+  @override
+  void initState() {
+    super.initState();
+    products = catchProducts();
+  }
 
   showDetails(Product product) {
     Navigator.push(
@@ -54,72 +63,101 @@ class _ProductsState extends State<Products> {
             )
           ],
         ),
-      body: ListView.separated(
-        itemBuilder: (BuildContext context, int product) {
-          return ListTile(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(5))
-            ),
-            leading: (choosed.contains(table[product]))
-                ? CircleAvatar(
-                    child: Icon(Icons.check),
-                  )
-                : SizedBox(
-                    child: Image.asset(table[product].icon),
-                    width: 32,
-                  ),
-            title: Row(
-              children: [
-                Text(
-                  table[product].nome,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500
-                  )
-                ),
-                if (itens.lista.contains(table[product])) 
-                  Icon(Icons.shopping_cart, color: Colors.deepOrange, size: 10)
-              ],
-            ),
-            trailing: Text(
-              real.format(
-                table[product].preco,
-              ),
-              style: TextStyle(fontSize: 16)
-            ),
-            selected: choosed.contains(table[product]),
-            selectedTileColor: Colors.indigo[50],
-            onLongPress: () {
-              setState(() {
-                (choosed.contains(table[product]))
-                    ? choosed.remove(table[product])
-                    : choosed.add(table[product]);
-                  });
+      body: FutureBuilder<List<Product>>(
+            future: products,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) { 
+                return ListView.separated(
+                  itemCount: snapshot.data!.length,
+                  itemBuilder: (context, index) {
+                    Product product = snapshot.data![index];
+                    return ListTile(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(5))
+                      ),
+                      leading: (choosed.contains(product))
+                        ? CircleAvatar(
+                          child: Icon(Icons.check),
+                        )
+                        : SizedBox(
+                          child: Image.asset(product.icon!),
+                          width: 32,
+                        ),
+                      title: Row(
+                        children: [
+                          Text(
+                            product.name!,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500
+                            )
+                          ),
+                    
+                          if (itens.lista.contains(product))
+                            Icon(Icons.shopping_cart, color: Colors.deepOrange, size: 10)
+                        ],
+                      ),
+                      trailing: Text(
+                        real.format(
+                          product.price!,
+                        ),
+                        style: TextStyle(fontSize: 16)
+                      ),
+                      selected: choosed.contains(product),
+                      selectedTileColor: Colors.indigo[50],
+                      onLongPress: () {
+                        setState(() {
+                          (choosed.contains(product))
+                          ? choosed.remove(product)
+                          : choosed.add(product);
+                        });
+                      },
+                      onTap: () => showDetails(product),
+                    );
                   },
-            onTap: () => showDetails(table[product]),
-          );
-        },
-        padding: EdgeInsets.all(15),
-        separatorBuilder: (_, ___) => Divider(),
-        itemCount: table.length
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: choosed.isNotEmpty
-          ? FloatingActionButton.extended(
-              onPressed: () {
-                itens.saveAll(choosed);
-                cleanChoosed();
-              },
-              icon: Icon(Icons.shopping_cart),
-              label: Text(
-                'Adicionar ao carrinho',
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
+                  padding: EdgeInsets.all(15),
+                  separatorBuilder: (_, ___) => Divider(),
+                );
+              } 
+              
+              else if (snapshot.hasError) {
+                return Text(snapshot.error.toString());
+              } 
+              
+              else {
+                return const CircularProgressIndicator();
+              }
+            },
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+          floatingActionButton: choosed.isNotEmpty
+            ? FloatingActionButton.extended(
+                onPressed: () {
+                  itens.saveAll(choosed);
+                  cleanChoosed();
+                },
+                icon: Icon(Icons.shopping_cart),
+                label: Text(
+                  'Adicionar ao carrinho',
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-              ),
-            )
-          : null,
+              )
+            : null,
     );
+  }
+
+  Future<List<Product>> catchProducts() async {
+    var url = Uri.parse('https://647215bf6a9370d5a41b0362.mockapi.io/products');
+    var response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      List productsList = json.decode(response.body);
+      return productsList.map((json) => Product.fromJson(json)).toList();
+    } else {
+      throw Exception('Erro: não foi possível carregar os usuários.');
+    }
   }
 }

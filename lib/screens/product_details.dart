@@ -28,7 +28,7 @@ class _ProductDetailsState extends State<ProductDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.product.nome),
+        title: Text(widget.product.name!),
       ),
       body: Padding(
         padding: EdgeInsets.all(24),
@@ -41,12 +41,12 @@ class _ProductDetailsState extends State<ProductDetails> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
-                    child: Image.asset(widget.product.icon),
+                    child: Image.asset(widget.product.icon!),
                     width: 50,
                   ),
                   Container(width: 10),
                   Text(
-                    real.format(widget.product.preco),
+                    real.format(widget.product.price!),
                     style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.w600,
@@ -107,7 +107,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   setState(() {
                     quantidade = (value.isEmpty)
                         ? 0
-                        : ((double.parse(value) * widget.product.preco) / 1000);
+                        : ((double.parse(value) * widget.product.price!) / 1000);
                   });
                 },
               ),

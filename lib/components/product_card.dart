@@ -43,7 +43,7 @@ class _ProductCardState extends State<ProductCard> {
           child: Row(
             children: [
               Image.asset(
-                widget.product.icon,
+                widget.product.icon!,
                 height: 32,
               ),
               Expanded(
@@ -53,7 +53,7 @@ class _ProductCardState extends State<ProductCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        widget.product.nome,
+                        widget.product.name!,
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
@@ -73,7 +73,7 @@ class _ProductCardState extends State<ProductCard> {
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: Text(
-                  real.format(widget.product.preco),
+                  real.format(widget.product.price!),
                   style: TextStyle(
                     fontSize: 16,
                     color: precoColor['down']
