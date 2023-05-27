@@ -154,7 +154,7 @@ class _ProductsState extends State<Products> {
     var response = await http.get(url);
 
     if (response.statusCode == 200) {
-      List productsList = json.decode(response.body);
+      List productsList = jsonDecode(utf8.decode(response.bodyBytes));
       return productsList.map((json) => Product.fromJson(json)).toList();
     } else {
       throw Exception('Erro: não foi possível carregar os usuários.');
