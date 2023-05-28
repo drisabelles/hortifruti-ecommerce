@@ -23,12 +23,20 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.all(20),
             child: Column(
               children: [
+                Text(
+                  'Olá, seja bem-vinde!',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20 
+                  ),
+                ),
+                const SizedBox(height: 15),
                 Image.asset(
-                  'assets/images/market_logo.png', 
+                  'assets/images/peasant-512px.png', 
                   height: 200,
                   width: 200
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 15),
                 SizedBox(
                   width: double.infinity,
                   height: 50,

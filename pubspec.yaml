@@ -65,19 +65,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - assets/images/market_logo.png
-    - assets/images/products/morango.png
-    - assets/images/products/mirtilo.png
-    - assets/images/products/espinafre.png
-    - assets/images/products/cenoura.png
-    - assets/images/products/batata.png
-    - assets/images/products/alho.png
-    - assets/images/products/abacate.png
-    - assets/images/products/abobora.png
-    - assets/images/products/pimenta.png
-    - assets/images/products/kiwi.png
-    - assets/images/products/melancia.png
-    - assets/images/profile/joaninha.png
+    - assets/images/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

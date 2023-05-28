@@ -37,10 +37,17 @@ class _CartState extends State<Cart> {
         child: Consumer<CartRepository>(
           builder: (context, itens, child) {
             return itens.lista.isEmpty
-                ? ListTile(
-                    leading: Icon(Icons.star),
-                    title: Text('Ainda não há itens no carrinho'),
-                  )
+                ? Center(
+                    child: Container(
+                      padding: EdgeInsets.all(5),
+                      child: ListTile(
+                        leading: Image.asset(
+                          'assets/images/colheita.png',
+                        ),
+                        title: Text('Ainda não há itens no carrinho.')
+                      ),
+                    ) 
+                  ) 
                 : ListView.builder(
                     itemCount: itens.lista.length,
                     itemBuilder: (_, index) {

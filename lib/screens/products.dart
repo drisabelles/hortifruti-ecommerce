@@ -81,7 +81,7 @@ class _ProductsState extends State<Products> {
                         )
                         : SizedBox(
                           child: Image.asset(product.icon!),
-                          width: 32,
+                          width: 40,
                         ),
                       title: Row(
                         children: [
@@ -125,7 +125,7 @@ class _ProductsState extends State<Products> {
               } 
               
               else {
-                return const CircularProgressIndicator();
+                return Center(child: const CircularProgressIndicator());
               }
             },
           ),
