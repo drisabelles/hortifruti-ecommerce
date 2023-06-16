@@ -8,7 +8,7 @@
 
 <div align="center">
 
-[Sobre o projeto](#project) | [Ferramentas](#tools) | [Usabilidades](#usabilities) | [Screenshots](#screenshots) | [Executando](#running) | [Autor](#autor)
+[Sobre o projeto](#project) | [Ferramentas](#tools) | [Usabilidades](#usabilities) | [Screenshots](#screenshots) | [Executando](#running) | [Link](#link) | [Autor](#autor)
 
 </br>
 
@@ -31,9 +31,10 @@ Aplicação desenvolvida com a intenção de praticar e aprimorar os conheciment
 - [X] Tela de cadastro (Form)
 - [X] Tela de login
 - [X] Tela de perfil
-- [X] Tela de visualização e seleção de produtos (Float Action Button)
+- [X] Tela home
+- [X] Tela de visualização e seleção de produtos (Float Action Button + CheckBox)
 - [X] Tela do carrinho de compras (ListView)
-- [X] Tela de avaliação do usuário (CheckBox)
+- [X] Tela de pesquisa para o usuário (CheckBox)
 
 <br />
 
@@ -76,7 +77,7 @@ Para não ter que executar os códigos e ver o que foi desenvolvido, <a href="ht
 ## 🗂️ Organização das pastas <a name="folders"></a>
 
 ```bash
-📂 flutter-shopping-cart
+📂 hortifruti-ecommerce
 |- 📁 .dart/tool
 |- 📁 assets/images
 |- 📁 build/web
@@ -85,9 +86,11 @@ Para não ter que executar os códigos e ver o que foi desenvolvido, <a href="ht
 |--- 📁 models
 |--- 📁 repositories
 |--- 📁 screens
+|--- 📄 constants.dart
 |--- 📄 main.dart
 |- 📁 test
-|- 📁 web
+|- 📄 .flutter-plugins
+|- 📄 .flutter-plugins-dependencies
 |- 📄 pubspec.lock
 |- 📄 pubspec.yaml
 ```
