@@ -94,7 +94,7 @@ class _ProductsState extends State<Products> {
                           ),
                     
                           if (itens.lista.contains(product))
-                            Icon(Icons.shopping_cart, color: Colors.deepOrange, size: 10)
+                            Icon(Icons.shopping_cart, color: Color(0xFFff8800), size: 10)
                         ],
                       ),
                       trailing: Text(
@@ -104,7 +104,7 @@ class _ProductsState extends State<Products> {
                         style: TextStyle(fontSize: 16)
                       ),
                       selected: choosed.contains(product),
-                      selectedTileColor: Colors.indigo[50],
+                      selectedTileColor: Colors.green[50],
                       onLongPress: () {
                         setState(() {
                           (choosed.contains(product))
@@ -113,6 +113,7 @@ class _ProductsState extends State<Products> {
                         });
                       },
                       onTap: () => showDetails(product),
+                      hoverColor: Colors.orange[50]
                     );
                   },
                   padding: EdgeInsets.all(15),

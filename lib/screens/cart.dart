@@ -31,7 +31,6 @@ class _CartState extends State<Cart> {
           ],
       ),
       body: Container(
-        color: Colors.indigo.withOpacity(0.05),
         height: MediaQuery.of(context).size.height,
         padding: EdgeInsets.all(12.0),
         child: Consumer<CartRepository>(

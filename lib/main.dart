@@ -20,12 +20,15 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'HortiFruti E-commerce',
-      theme: ThemeData(primarySwatch: Colors.green),
+      theme: ThemeData(
+        scaffoldBackgroundColor: const Color(0xFFfdfdfd), 
+        primarySwatch: Colors.green),
       home: Login(),
       routes: {
         '/cart': (context) => Cart(),

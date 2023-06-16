@@ -17,6 +17,17 @@ class _HomeState extends State<Home> {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Home'),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.portrait_rounded,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                //Navigator.of(context).pushNamed('/cart');
+              },
+            )
+          ],
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -24,9 +35,11 @@ class _HomeState extends State<Home> {
             child: Column(
               children: [
                 Text(
-                  'Olá, seja bem-vinde!',
+                  'Olá, seja bem-vindo(a)!',
                   style: TextStyle(
-                    fontWeight: FontWeight.w500,
+                    color: Colors.green,
+                    letterSpacing: 1,
+                    fontWeight: FontWeight.bold,
                     fontSize: 20 
                   ),
                 ),

@@ -12,6 +12,9 @@ class _LoginState extends State<Login> {
   final formKey = GlobalKey<FormState>();
   bool obscuredText = false;
 
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +45,7 @@ class _LoginState extends State<Login> {
                     ),
                     const SizedBox(height: 15),
                     CustomTextField(
+                      controller: _usernameController,
                       label: 'Nome de usuário',
                       hint: 'Digite o seu nome de usuário',
                       obscureText: false,
@@ -54,6 +58,7 @@ class _LoginState extends State<Login> {
                     ),
                     const SizedBox(height: 15),
                     CustomTextField(
+                      controller: _passwordController,
                       label: 'Senha',
                       hint: 'Digite a sua senha',
                       obscureText: obscuredText = !obscuredText,
@@ -100,13 +105,14 @@ class _LoginState extends State<Login> {
                       width: 300,
                       height: 50,
                       child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(backgroundColor: Colors.deepOrange),
+                        style: ElevatedButton.styleFrom(backgroundColor: Color(0xFFfdfdfd)),
                         onPressed: () {
                           Navigator.of(context).pushNamed('/register');
                         },
                         child: const Text(
                           'Não tem uma conta? Cadastre-se',
                           style: TextStyle(
+                            color: Color(0xFFff8800),
                             fontSize: 15,
                             fontWeight: FontWeight.w500
                           )
