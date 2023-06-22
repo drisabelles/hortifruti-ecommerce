@@ -1,3 +1,5 @@
+![Status do Projeto](https://img.shields.io/badge/STATUS-EM_DESENVOLVIMENTO-orange?style=none)
+
 <div align="center">
 
 <img src="https://github.com/drisabelles/hortifruti-ecommerce/assets/79321198/2c762004-2f1b-4ad7-ad4e-bac26634cc52" > 
